@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<h1>Product List</h1>
+<div class="table-container">
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Barcode</th>
+        <th class="name-column">Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th class="number-column">Sale Price</th>
+        <th>Purchase</th>
+        <th class="number-column">Profit %</th>
+        <th>Stock</th>
+        <th>Imagen</th>
+        <th>Created</th>
+        <th>Last Update</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td class="monospace">{{ product.id }}</td>
+        <td>{{product.barCode}}</td>
+        <td>{{ product.name }}</td>
+        <td class="description">{{ product.description }}</td>
+        <td>{{ product.category }}</td>
+        <td class="currency">{{ product.priceSale | currency }}</td>
+        <td class="currency">{{ product.purchasePrice | currency }}</td>
+        <td class="percentage">{{ product.profitPercentage | number:'1.0-2' }}%</td>
+        <td class="stock" [class.low-stock]="product.stock < 10">{{ product.stock }}</td>
+        <td class="image-cell">
+          <img *ngIf="product.imageUrl" [src]="product.imageUrl" alt="{{ product.name }}" class="product-image">
+        </td>
+        <td>{{ product.createdAt | date:'dd/MM/yyyy' }}</td>
+        <td>{{product.updatedAt | date:'dd/MM/yyyy'}}</td>
+        <td class="actions">
+            <button>
+              <a [routerLink]="['/edit-product', product.id]" title="Edit"><i class="fas fa-edit"></i></a>
+            </button>
+            <button class="action-btn delete-btn" (click)="deleteProduct(product.id)" title="Delete"><i class="fas fa-trash-alt"></i>
+            </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

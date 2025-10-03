@@ -1,0 +1,148 @@
+.table-container {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.product-table th {
+  background-color: #f2f2f2;
+  padding: 12px 8px;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+.product-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.product-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Estilos específicos para columnas */
+.monospace {
+  font-family: monospace;
+}
+.currency {
+  text-align: right;
+  font-family: monospace;
+}
+.percentage {
+  text-align: center;
+  color: #2e7d32;
+  font-weight: bold;
+}
+.stock {
+  text-align: center;
+}
+
+.low-stock {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.description {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.image-cell {
+  width: 80px;
+  text-align: center;
+}
+
+.product-image {
+  max-width: 60px;
+  max-height: 60px;
+  border-radius: 4px;
+}
+.actions {
+  white-space: nowrap;
+  text-align: center;
+}
+
+.action-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  margin: 0 3px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+}
+
+.edit-btn {
+  color: #1976d2;
+}
+
+.edit-btn:hover {
+  background-color: rgba(25, 118, 210, 0.1);
+}
+
+.delete-btn {
+  color: #d32f2f;
+}
+
+.delete-btn:hover {
+  background-color: rgba(211, 47, 47, 0.1);
+}
+
+/* Si usas Font Awesome */
+.fas {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  text-align: center;
+}
+
+.name-column {
+  width: 200px; /* Ajusta este valor según necesites */
+}
+
+.name-cell {
+  min-width: 200px;
+  max-width: 200px;
+  white-space: normal; /* Permite que el texto se ajuste en varias líneas */
+}
+
+.number-column {
+  text-align: center !important;
+}
+
+.number-cell {
+  text-align: center !important;
+}
+
+/* Ajusta el ancho de otras columnas si es necesario */
+.product-table th,
+.product-table td {
+  padding: 10px 8px;
+}
+
+/* Opcional: Ajusta el ancho de columnas específicas */
+.monospace {
+  width: 20px;
+}
+
+.description {
+  max-width: 180px;
+}
+
+.stock {
+  width: 80px;
+}

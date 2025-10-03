@@ -1,0 +1,30 @@
+.navbar {
+  background: #222;
+  padding: 0.5rem 1rem;
+}
+.navbar-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.navbar-item {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin: 0 15px;
+}
+.navbar-item a.active,
+.navbar-item a:hover {
+  background: #444;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}

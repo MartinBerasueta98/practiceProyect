@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": "7792180004871",
+      "name": "Yerba amanda 500g",
+      "description": "",
+      "category": "Food",
+      "priceSale": "1950.00",
+      "purchasePrice": 1500,
+      "profitPercentage": 30,
+      "stock": 0,
+      "imageUrl": "https://d1on8qs0xdu5jz.cloudfront.net/webapp/images/productos/b/0000000000/179.jpg",
+      "createdAt": "7/18/2025"
+    },
+    {
+      "id": "7791337007260",
+      "name": "Cindor x200ml",
+      "description": null,
+      "category": "Food",
+      "priceSale": "1430.00",
+      "purchasePrice": 1100,
+      "profitPercentage": 30,
+      "stock": 20,
+      "imageUrl": null,
+      "createdAt": "2025-07-23T06:42:28.546Z"
+    },
+    {
+      "id": "7792710002179",
+      "name": "Harina",
+      "description": null,
+      "category": "Food",
+      "priceSale": "1170.00",
+      "purchasePrice": 900,
+      "profitPercentage": 30,
+      "stock": 10,
+      "imageUrl": null,
+      "createdAt": "2025-07-23T06:43:13.427Z"
+    }
+  ]
+}

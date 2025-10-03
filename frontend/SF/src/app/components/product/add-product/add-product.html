@@ -1,0 +1,85 @@
+<app-navbar></app-navbar>
+<div class="form-container">
+    <section>
+        <h1>Add Product</h1>
+        <form class="set" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <!-- Nombre -->
+            <div [class.error]="nameControl?.invalid && nameControl?.touched">
+            <label for="name">Product Name:</label>
+            <input id="name" formControlName="name" aria-label="Product name" required>
+            <small *ngIf="nameControl?.invalid && nameControl?.touched">
+                Product name is required
+            </small>
+            </div>
+            <!-- Código -->
+            <div [class.error]="idControl?.invalid && idControl?.touched">
+                <label for="id">Product Code:</label>
+                <input id="id" formControlName="id" aria-label="Product code" required>
+                <small *ngIf="idControl?.invalid && idControl?.touched">
+                    Product code is required
+                </small>
+            </div>
+            <!-- Categoría -->
+            <div [class.error]="categoryControl?.invalid && categoryControl?.touched">
+                <label for="category">Category:</label>
+                <select id="category" formControlName="category" aria-label="Product category" required>
+                    <option value="">Select a category</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Food">Food</option>
+                    <option value="Beverages">Beverages</option>
+                    <option value="Cleaning">Cleaning</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Stationery">Stationery</option>
+                    <option value="Other">Other</option>
+                </select>
+                <small *ngIf="categoryControl?.invalid && categoryControl?.touched">
+                    Category is required
+                </small>
+            </div>
+            <!-- Precio de Compra -->
+            <div>
+                <label for="purchasePrice">Purchase Price:</label>
+                <input id="purchasePrice" type="number" formControlName="purchasePrice" 
+                       (input)="calculateSalePrice()" aria-label="Purchase price" required>
+            </div>
+            <!-- Porcentaje de Ganancia -->
+            <div>
+                <label for="profitPercentage">Profit Percentage (%):</label>
+                <input id="profitPercentage" type="number" formControlName="profitPercentage" 
+                       (input)="calculateSalePrice()" aria-label="Profit percentage" required>
+            </div>
+            <!-- Precio de Venta (solo lectura) -->
+            <div>
+                <label for="priceSale">Price Sale:</label>
+                <input id="priceSale" type="number" formControlName="priceSale" readonly
+                       aria-label="Calculated sale price">
+            </div>
+            <!-- Stock -->
+            <div [class.error]="stockControl?.invalid && stockControl?.touched">
+                <label for="stock">Stock:</label>
+                <input id="stock" type="number" formControlName="stock" aria-label="Product stock" required>
+                <small *ngIf="stockControl?.invalid && stockControl?.touched">
+                    Stock is required and must be a non-negative number
+                </small>
+            </div>
+            <!-- Imagen -->
+            <div>
+                <label for="imageUrl">Image URL:</label>
+                <input id="imageUrl" type="text" formControlName="imageUrl" 
+                       aria-label="Product image URL" placeholder="https://example.com/image.jpg">
+                <small *ngIf="productForm.get('imageUrl')?.invalid && productForm.get('imageUrl')?.touched">
+                    Please enter a valid URL
+                </small>
+            </div>
+            <!-- Descripción -->
+            <div>
+                <label for="description">Description:</label>
+                <textarea id="description" formControlName="description" aria-label="Product description"></textarea>
+            </div>
+            <!-- Botón -->
+            <button type="submit"[disabled]="productForm.invalid" aria-label="Submit product form">
+                Add Product
+            </button>
+        </form>
+    </section>
+</div>
